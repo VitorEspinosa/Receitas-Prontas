@@ -1,0 +1,320 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #6d3f17; /* bege claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #4b2e2e; /* marrom chocolate */
+}
+
+.container {
+  background-color: #f5cab1;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(75, 46, 46, 0.2);
+  padding: 30px;
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border: 3px solid #d2b48c; 
+}
+
+h1 {
+  color: #5c3317;
+  margin-bottom: 25px;
+  font-size: 2.8em;
+  font-family: "Georgia", serif;
+  text-shadow: 2px 2px #e5c1a1; 
+}
+
+h2 {
+  color: #3e2723;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  border-bottom: 2px dashed #a0522d;
+  padding-bottom: 10px;
+}
+
+.section {
+  background-color: #faeee6; 
+  border: 1px solid #e0c097;
+  border-radius: 12px;
+  padding: 25px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(75, 46, 46, 0.08);
+  text-align: left;
+}
+
+#ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#ingredients-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #deb887;
+  font-size: 1.1em;
+  color: #4b2e2e;
+}
+
+#ingredients-list li:last-child {
+  border-bottom: none;
+}
+
+.step-display {
+  background-color: #fff;
+  border: 1px solid #d2b48c;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(75, 46, 46, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.step-number {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #8b4513; /* marrom chocolate */
+  margin-bottom: 10px;
+}
+
+.step-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(75, 46, 46, 0.3);
+}
+
+.step-text {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #4b2e2e;
+  text-align: center;
+}
+
+.step-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #deb887;
+}
+
+.timer-display {
+  font-family: "monospace";
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #8b0000; /* marrom avermelhado */
+  background-color: #f5deb3; /* trigo/bege */
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(75, 46, 46, 0.15);
+  display: none;
+}
+
+/* Checkbox em tom chocolate */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.1em;
+  user-select: none;
+  color: #4b2e2e;
+}
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #f5deb3;
+  border-radius: 5px;
+  border: 1px solid #a0522d;
+}
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #deb887;
+}
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #8b4513;
+  border-color: #8b4513;
+}
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-container input:checked ~ .checkmark::after {
+  display: block;
+}
+.checkbox-container .checkmark::after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.action-button {
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.1s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(75, 46, 46, 0.15);
+}
+.action-button.primary {
+  background-color: #8b4513;
+  color: white;
+}
+.action-button.primary:hover {
+  background-color: #5c3317;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(92, 51, 23, 0.25);
+}
+.action-button.secondary {
+  background-color: #d2b48c;
+  color: #3e2723;
+}
+.action-button.secondary:hover {
+  background-color: #deb887;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(160, 82, 45, 0.25);
+}
+.action-button.restart-button {
+  background-color: #a0522d;
+  color: white;
+}
+.action-button:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: #fff8f0;
+  margin: auto;
+  padding: 30px;
+  border: 2px solid #a0522d;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(75, 46, 46, 0.25);
+  position: relative;
+  text-align: center;
+}
+.modal-content p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  color: #4b2e2e;
+}
+.modal-content .action-button {
+  background-color: #8b4513;
+  padding: 8px 20px;
+  font-size: 1em;
+  max-width: 120px;
+  margin: 0 auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    width: 95%;
+    gap: 20px;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  .section {
+    padding: 15px;
+  }
+  .step-number {
+    font-size: 1.3em;
+  }
+  .step-text {
+    font-size: 1em;
+  }
+  .timer-display {
+    font-size: 2em;
+    padding: 8px 15px;
+  }
+  .checkbox-container {
+    font-size: 1em;
+    padding-left: 30px;
+  }
+  .checkmark {
+    height: 22px;
+    width: 22px;
+  }
+  .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 4px;
+    height: 8px;
+  }
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .action-button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+  .modal-content {
+    padding: 20px;
+    width: 90%;
+  }
+}

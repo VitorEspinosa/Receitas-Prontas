@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Simulador de Receita Culinária</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1 id="recipe-title"></h1>
+        <div class="section recipe-info-section">
+            <h2>Descrição</h2>
+            <p id="recipe-description"></p>
+        </div>
+        <div class="section ingredients-section">
+            <h2>Ingredientes</h2>
+            <ul id="ingredients-list">
+                
+            </ul>
+        </div>
+        <div class="section steps-section">
+            <h2>Passo a Passo</h2>
+            <div id="step-display" class="step-display">
+                <p id="step-number" class="step-number"></p>
+                <p id="step-text" class="step-text"></p>
+                <img src="" alt="Imagem do Passo" id="step-image" class="step-image">
+                <p id="step-next" class="step-next"></p>
+                <div class="step-controls">
+                    <div id="timer-display" class="timer-display">
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="step-completed-checkbox">
+                        <span class="checkmark"></span>
+                        Passo Concluído
+                    </label>
+                </div>
+            </div>
+            <div class="navigation-buttons">
+                <button id="prev-step-btn" class="action-button secondary">Anterior</button>
+                <button id="next-step-btn" class="action-button primary">Próximo</button>
+            </div>
+            <button id="restart-recipe-btn" class="action-button restart-button">Reiniciar Receita</button>
+        </div>
+        <div id="message-box" class="modal">
+            <div class="modal-content">
+                <p id="message-text"></p>
+                <button id="close-message-btn" class="action-button">OK</button>
+            </div>
+        </div>
+    </div>
+    <script src='script.js'></script>
+</body>
+</html>

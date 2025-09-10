@@ -1,0 +1,79 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe); /* azul suave */
+  color: #1e3a8a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #1e40af;
+  line-height: 1.4;
+}
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  color: #1e40af;
+  line-height: 1.4;
+}
+
+/* Container dos "cards" */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Estilo de cada receita (card) */
+.r-window {
+  background-color: #f0f9ff;
+  border: 2px solid #93c5fd;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.15);
+  padding: 20px;
+  text-align: center;
+  width: 280px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.r-window img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease;
+}
+
+.r-window:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(30, 64, 175, 0.25);
+}
+
+.r-window:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6em;
+  }
+  .r-window {
+    width: 100%;
+    max-width: 350px;
+  }
+}
